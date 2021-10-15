@@ -1,12 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import ApplicantLoginForm
 
 # Create your views here.
-
-
-def home(request):
-    return HttpResponse("This is Home page!!!!")
 
 
 def loginPage(request):
@@ -19,5 +15,6 @@ def loginPage(request):
             print(username)
             print(password)
             # time to save these into mysql database
+            return redirect('/')  # should redirect to dashboard
 
     return render(request, 'login/login.html', {'form': form})
