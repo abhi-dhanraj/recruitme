@@ -12,6 +12,8 @@ def loginPage(request):
         if form.is_valid():
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
+            # form.save()
+
             print(username)
             print(password)
             # time to save these into mysql database

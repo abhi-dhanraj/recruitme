@@ -4,17 +4,13 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="{% static 'recruitme/css/bootstrap.min.css' %}" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="{% static 'login/css/login_base.css' %}">
 </head>
 <body>
-<div class="center">
-    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-</div>
-
-<div id="id01" class="modal">
   <form class="modal-content animate" action="" method="POST">
     <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <a href="{% url 'home' %}"><span class="close" title="Close Modal">&times;</span></a>
       <img src="{% static 'login/images/login_avtar.png' %}" alt="Avatar" class="avatar">
     </div>
 
@@ -22,8 +18,9 @@
       {% csrf_token %}
       {{form}}
       <button type="submit">Login</button>
+
       <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
+        <input type="checkbox" unchecked="unchecked" name="remember"> Remember me
       </label>
     </div>
 
@@ -33,7 +30,6 @@
       <span class="psw">Forgot <a href="#">password?</a></span>
     </div>
   </form>
-</div>
 
 <script src="{% static 'login/js/login_base.js' %}"></script>
 </body>

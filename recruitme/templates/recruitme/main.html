@@ -5,37 +5,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link href="{% static 'recruitme/css/bootstrap.min.css' %}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'recruitme/css/global_base.css' %}">
+    <link href="{% static 'recruitme/css/global_base.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- <script src="{% static 'recruitme/js/jquery-3.6.0.min.js' %}"></script> -->
+    <!-- <script src="{% static 'recruitme/js/bootstrap.min.js' %}"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <title>Recruitme</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow p-3" style="padding: 15px 72px 15px 72px;">
-        <a class="navbar-brand" href="{% url 'home' %}">Recruitme</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow p-3" style="padding: 15px 72px 15px 72px;">
+    <a class="navbar-brand" href="{% url 'home' %}">Recruitme</a>
+    <div class="navbar-header">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
 
-        <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Profile</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Dashboard</a>
-            </li>
-          </ul>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Dashboard</a>
+        </li>
+      </ul>
 
-        <!-- <button class="btn btn-warning my-2 my-sm-0" type="submit">Login</button> -->
-        <a class="btn btn-warning shadow-lg my-2 my-sm-0" href="{% url 'applicant-login-page'%}">Login</a>
-        </div>
-      </nav>
-    <h3 class="hd text-center">HOMEPAGE</h3>
-    <script src="{% static 'recruitme/js/global_base.js' %}"></script>
-    <script src="{% static 'recruitme/js/bootstrap.min.js' %}"></script>
+    <!-- <button class="btn btn-warning my-2 my-sm-0" type="submit">Login</button> -->
+    <!-- <a class="btn btn-warning shadow-lg my-2 my-sm-0 loginbtn" href="{% url 'applicant-login-page'%}"><img src="{% static 'recruitme/images/login-vector.png' %}" class="login_logo"><span>LOG IN</span></a> -->
+
+    <a href="{% url 'applicant-login-page' %}">
+      <button class="btn btn-warning my-2 my-sm-0 loginbtn">
+          <img src="{% static 'recruitme/images/login-vector.png' %}" class="login_logo">
+          <span>LOG IN</span>
+      </button>
+    </a>
+
+
+    </div>
+
+  </nav>
+  <h3 class="hd text-center">HOMEPAGE</h3>
+
+  <!-- <script src="{% static 'recruitme/js/global_base.js' %}"></script> -->
 </body>
 </html>

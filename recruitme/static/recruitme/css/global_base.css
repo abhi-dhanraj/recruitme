@@ -3,7 +3,18 @@
 nav {
   font-family: "Poppins", sans-serif;
 }
+.loginbtn {
+  width: 123px;
+  height: 45px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
 
+.login_logo {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
 body {
   font-family: Arial, Helvetica, sans-serif;
 }

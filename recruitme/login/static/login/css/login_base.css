@@ -1,5 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,200;1,300;1,400;1,500&display=swap");
+
 body {
   font-family: Arial, Helvetica, sans-serif;
+  --bs-bg-opacity: 1;
+  background-color: rgba(
+    var(--bs-primary-rgb),
+    var(--bs-bg-opacity)
+  ) !important;
 }
 /* Full-width input fields */
 input[type="text"],
@@ -10,6 +17,7 @@ input[type="password"] {
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 .center {
   position: absolute;
@@ -20,8 +28,9 @@ input[type="password"] {
 /* Set a style for all buttons */
 button {
   /* background-color: #04AA6D; */
-  background-color: rgb(61, 34, 61);
-  color: white;
+  background-color: #ffc107;
+  color: #000;
+  font-family: "Poppins", sans-serif;
   padding: 14px 20px;
   margin: auto;
   border: none;
@@ -41,6 +50,12 @@ button:hover {
   width: auto;
   padding: 10px 18px;
   background-color: #f44336;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /* Center the image and position the close button */
@@ -86,6 +101,7 @@ span.psw {
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
   width: 60%; /* Could be more or less, depending on screen size */
+  box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /* The Close Button (x) */

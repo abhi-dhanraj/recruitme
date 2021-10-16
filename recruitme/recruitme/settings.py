@@ -130,6 +130,8 @@ STATIC_URL = '/static/'
 # This is Added by Omkar | used to access global static files
 STATICFILES_DIRS = [
     BASE_DIR / "static",
+    # This is Added by Omkar | used to access login app's static files
+    os.path.join(BASE_DIR, 'login/static/'),
 ]
 
 

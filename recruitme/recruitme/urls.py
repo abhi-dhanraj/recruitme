@@ -20,6 +20,6 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login/', include('login.urls')),  # adding login django app urls
+    path('', include('login.urls')),  # adding login django app urls
     path('', views.homePage, name="home"),
 ]
