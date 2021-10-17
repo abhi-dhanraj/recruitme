@@ -177,6 +177,11 @@
   margin-right: 0px;
   margin-left: 0px;
   box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+  outline: none;
+}
+.mynav button:hover {
+  background: #ffd24b;
+  border-color: #ffd24b;
 }
 
 .mynav a button span {
@@ -205,9 +210,21 @@
   top: 30px;
   display: flex;
   justify-content: space-between;
-  margin: 0px 30px 0px 20px;
+  margin: 0px 30px 0px 30px;
 }
 
 .content {
-  padding: 0px 20px 0px 20px;
+  padding: 0px 30px 0px 30px;
+}
+/*************************************************/
+/*************************************************/
+/*************************************************/
+/*************************************************/
+/*************************************************/
+/*************************************************/
+
+.card-columns .card {
+  background-color: #ebebeb;
+  margin-bottom: 30px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
