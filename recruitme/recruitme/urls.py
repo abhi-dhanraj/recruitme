@@ -21,5 +21,8 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('login.urls')),  # adding login django app urls
-    path('', views.homePage, name="home"),
+    path('', views.jobsPage, name="jobs"),
+    path('jobs/', views.jobsPage, name="jobs"),
+    path('dashboard/', views.dashboardPage, name="dashboard"),
+    path('profile/', views.profilePage, name="profile"),
 ]

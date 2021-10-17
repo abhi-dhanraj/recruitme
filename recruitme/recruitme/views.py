@@ -4,6 +4,18 @@ from django.http import HttpResponse
 
 # Create your views here.
 
-def homePage(request):
-    # return HttpResponse("This is HomePage")
-    return render(request, 'recruitme/main.html')
+# def mainPage(request):
+#     # return HttpResponse("This is HomePage")
+#     return render(request, 'recruitme/main.html')
+
+
+def dashboardPage(request):
+    return render(request, 'recruitme/dashboardPage.html')
+
+
+def profilePage(request):
+    return render(request, 'recruitme/profilePage.html')
+
+
+def jobsPage(request):
+    return render(request, 'recruitme/jobsPage.html')

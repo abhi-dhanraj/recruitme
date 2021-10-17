@@ -1,0 +1,19 @@
+{% extends 'recruitme/index.html' %}
+
+{% load static %}
+{% block content %}
+<section class="main-container">
+    <section class="main-nav">
+      <div class="mynav">
+        <div class="nav-text">Dashboard</div>
+        <a href="{% url 'applicant-login-page' %}"><button class="btn my-2 my-sm-0"><img src="{% static 'recruitme/images/login-vector.png' %}" class="login_logo"><span>LOG IN</span></button></a>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="text-content">
+        Ea do officia ut in anim pariatur fugiat dolore elit fugiat aute. Nisi voluptate adipisicing reprehenderit nostrud consectetur amet exercitation culpa. Qui ex irure eiusmod ullamco laborum labore ea qui occaecat occaecat. Dolore eu deserunt labore do Lorem minim velit id exercitation proident. Ut velit qui aliqua minim in laborum commodo velit elit ea officia laborum labore.Magna mollit occaecat deserunt aute minim commodo ad in ipsum excepteur tempor laboris tempor non. Nisi culpa do cupidatat dolore quis anim duis laborum laborum. Adipisicing non quis minim nulla cillum ullamco consequat incididunt deserunt enim sint aliquip adipisicing dolor. Anim Lorem commodo deserunt minim.
+      </div>
+    </section>
+</section>
+{% endblock %}

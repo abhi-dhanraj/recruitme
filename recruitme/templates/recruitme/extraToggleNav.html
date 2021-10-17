@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'recruitme/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'recruitme/css/global_base.css' %}" rel="stylesheet" type="text/css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <title>Recruitme</title>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,200;1,300;1,400;1,500&display=swap");
+*{
+    margin:0;
+    padding: 0;
+    font-family: "Poppins",sans-serif;
+}
+.sidebar{
+    position: fixed;
+    width: 220px;
+    height: 100%;
+    background-color:#2867ee;
+    left: -220px;
+    box-shadow:none;
+    transition: 0.6s all;
+
+}
+.sidebar.active{
+    left: 0px;
+    box-shadow:5px 0px 15px grey;
+}
+
+.sidebar ul{
+    margin: 0;
+    padding: 0;
+
+}
+.sidebar ul li{
+    color: rgba(230, 230, 230, 0.9);
+    list-style: none;
+    padding: 15px 10px;
+    font-size: 25px;
+}
+
+.sidebar ul li a{
+    text-decoration: none;
+    color: white;
+    height: 80px;
+    width: 100%;
+    font-size: 25px;
+    line-height: 80px;
+    text-align: center;
+    display: block;
+    transition: 0.6s all;
+}
+
+.sidebar ul li a:hover{
+    background: #ffc107;
+    color: #151719;
+    border-radius: 10px;
+}
+.sidebar .toggle-btn{
+    position: absolute;
+    left: 240px;
+    top: 20px;
+
+}
+.sidebar .toggle-btn span{
+    display: block;
+    width: 35px;
+    height: 6px;
+    background-color: #151719;
+    margin: 5px 0px;
+    border-radius: 3px;
+
+
+}
+</style>
+</head>
+
+<body>
+    <!-------------------------------------------------------------------------->
+
+<div class="sidebar">
+    <div class="toggle-btn" onclick="toggleSidebar()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <ul>
+        <li><a href="#"><ion-icon name="home-outline"></ion-icon>Home</a></li>
+        <li><a href="#"><ion-icon name="person-outline"></ion-icon> Profile</a></li>
+        <li><a href="{% url 'dashboard' %}"><ion-icon name="reader-outline"></ion-icon> Dashboard</a></li>
+    </ul>
+</div>
+<div class="nav-content">
+    <h2>Contents</h2>
+</div>
+
+
+
+<!-- <a class="btn"><ion-icon name="menu-outline"></ion-icon></a> -->
+
+
+    <script type="text/javascript">
+
+        function toggleSidebar(){
+            document.querySelector('.sidebar').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

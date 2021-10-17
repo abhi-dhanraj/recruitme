@@ -17,6 +17,6 @@ def loginPage(request):
             print(username)
             print(password)
             # time to save these into mysql database
-            return redirect('/')  # should redirect to dashboard
+            return redirect('dashboard')  # should redirect to dashboard
 
     return render(request, 'login/login.html', {'form': form})
