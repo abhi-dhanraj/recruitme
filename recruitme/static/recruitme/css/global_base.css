@@ -173,8 +173,8 @@
 .mynav a button {
   background-color: #ffc107;
   border-color: #ffc107;
-  width: 123px;
-  height: 45px;
+  width: 140px;
+  height: 50px;
   margin-right: 0px;
   margin-left: 0px;
   box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
@@ -188,7 +188,7 @@
 .mynav a button span {
   color: black;
   font-family: "Poppins", sans-serif;
-  font-size: 20px;
+  font-size: 23px;
   font-weight: 600;
   padding-left: 5px;
 }
