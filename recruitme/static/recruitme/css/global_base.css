@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 78px;
+  background-color: #2867ee;
+  padding: 6px 14px;
+  z-index: 99;
+  transition: all 0.5s ease;
+  box-shadow: 5px 0px 15px grey;
+}
+.sidebar.open {
+  width: 250px;
+}
+.sidebar .logo-details {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 15px;
+}
+.sidebar .logo-details .icon {
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar .logo-details .logo_name {
+  min-width: 170px;
+  opacity: 0;
+  transition: all 0.5s ease;
+  text-align: center;
+}
+.sidebar .logo-details .logo_name a {
+  color: #fff;
+  font-size: 27px;
+  font-weight: 600;
+  list-style: none;
+  text-decoration: none;
+}
+.sidebar.open .logo-details .icon,
+.sidebar.open .logo-details .logo_name {
+  opacity: 1;
+}
+.sidebar .logo-details #btn {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: all 0.4s ease;
+  font-size: 35px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details #btn {
+  text-align: right;
+}
+.sidebar i {
+  color: #fff;
+  height: 60px;
+  min-width: 50px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 60px;
+}
+.sidebar .nav-list {
+  margin-top: 20px;
+  height: 100%;
+}
+.sidebar li {
+  position: relative;
+  margin: 8px 0;
+  list-style: none;
+}
+
+.sidebar li a {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+.sidebar li a:hover {
+  background: #ffc107;
+  color: black;
+}
+.sidebar li a .links_name {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+}
+
+.sidebar.open li a .links_name {
+  opacity: 1;
+  pointer-events: auto;
+}
+.sidebar li a:hover .links_name,
+.sidebar li a:hover i {
+  transition: all 0.5s ease;
+  color: #11101d;
+}
+.sidebar li i {
+  height: 50px;
+  line-height: 50px;
+  font-size: 30px;
+  border-radius: 12px;
+}
+
+.sidebar li .profile-details {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.sidebar li img {
+  height: 45px;
+  width: 45px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+
+.main-container {
+  position: relative;
+  min-height: 100%;
+  top: 0;
+  left: 78px;
+  width: calc(100% - 78px);
+  transition: all 0.5s ease;
+  z-index: 2;
+  background: #ffffffe8;
+}
+.sidebar.open ~ .main-container {
+  left: 250px;
+  width: calc(100% - 250px);
+}
+.main-container .nav-text {
+  color: #11101d;
+  font-size: 40px;
+  font-weight: 500;
+}
+.main-container .nav-text.animated {
+  width: 0ch;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: text 1.5s steps(16) forwards, blink 750ms steps(16) infinite;
+  border-right: 4px solid black;
+}
+@keyframes text {
+  to {
+    width: 16.3ch;
+  }
+}
+@keyframes blink {
+  to {
+    border-right: 4px;
+    background: transparent;
+  }
+}
+.mynav a button {
+  background-color: #ffc107;
+  border-color: #47453f;
+  width: 140px;
+  height: 50px;
+  margin-right: 0px;
+  margin-left: 0px;
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+  outline: none;
+}
+.mynav button:hover {
+  background: #ffd24b;
+  border-color: #ffd24b;
+}
+
+.mynav a button span {
+  color: black;
+  font-family: "Poppins", sans-serif;
+  font-size: 23px;
+  font-weight: 600;
+  padding-left: 5px;
+}
+.main-nav {
+  position: relative;
+  min-height: 19vh;
+  top: 0;
+  width: 100%;
+  transition: all 0.5s ease;
+  z-index: 2;
+}
+.login_logo {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.mynav {
+  position: relative;
+  top: 30px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 30px 0px 30px;
+}
+
+.content {
+  padding: 0px 30px 0px 30px;
+}
+/*************************************************/
+/*************************************************/
+/*************************************************/
+/*************************************************/
+/*************************************************/
+/*************************************************/
+
+.dashboardCards .card-columns .card {
+  background-color: #ffffff;
+  margin-bottom: 30px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.jobCards .card {
+  background-color: #ffffff;
+  margin: auto;
+  margin-bottom: 40px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.jobCards a {
+  list-style: none;
+  text-decoration: none;
+  color: #11101d;
+}
+#more-details {
+  list-style: none;
+  text-decoration: none;
+  float: right;
+  color: #2867ee;
+}
+/***************************/
+@media (max-width: 720px) {
+  .main-container .nav-text,
+  .main-container .nav-text.animated {
+    font-size: 30px;
+    border-right-width: 2px;
+  }
+  .mynav a button {
+    width: 90px;
+  }
+  .mynav a button span {
+    font-size: 14px;
+  }
+  .mynav a button img {
+    width: 15px;
+    height: 15px;
+  }
+}
+@media (max-width: 620px) {
+  .main-container .nav-text,
+  .main-container .nav-text.animated {
+    font-size: 20px;
+    border-right-width: 2px;
+  }
+}
