@@ -19,3 +19,7 @@ def profilePage(request):
 
 def jobsPage(request):
     return render(request, 'recruitme/jobsPage.html')
+
+
+def jobDetailsPage(request):
+    return render(request, 'recruitme/jobDetailsPage.html')

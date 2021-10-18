@@ -135,7 +135,7 @@
 
 .main-container {
   position: relative;
-  min-height: 100vh;
+  min-height: 100%;
   top: 0;
   left: 78px;
   width: calc(100% - 78px);
@@ -172,7 +172,7 @@
 }
 .mynav a button {
   background-color: #ffc107;
-  border-color: #ffc107;
+  border-color: #47453f;
   width: 140px;
   height: 50px;
   margin-right: 0px;
@@ -245,4 +245,29 @@
   text-decoration: none;
   float: right;
   color: #2867ee;
+}
+/***************************/
+@media (max-width: 720px) {
+  .main-container .nav-text,
+  .main-container .nav-text.animated {
+    font-size: 30px;
+    border-right-width: 2px;
+  }
+  .mynav a button {
+    width: 90px;
+  }
+  .mynav a button span {
+    font-size: 14px;
+  }
+  .mynav a button img {
+    width: 15px;
+    height: 15px;
+  }
+}
+@media (max-width: 620px) {
+  .main-container .nav-text,
+  .main-container .nav-text.animated {
+    font-size: 20px;
+    border-right-width: 2px;
+  }
 }

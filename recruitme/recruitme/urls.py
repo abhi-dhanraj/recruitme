@@ -25,4 +25,5 @@ urlpatterns = [
     path('jobs/', views.jobsPage, name="jobs"),
     path('dashboard/', views.dashboardPage, name="dashboard"),
     path('profile/', views.profilePage, name="profile"),
+    path('jobs/apply/', views.jobDetailsPage, name="apply"),
 ]
