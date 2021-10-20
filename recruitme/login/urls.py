@@ -19,5 +19,8 @@ from . import views
 
 urlpatterns = [
     # separatly handling login app routes
+
     path('login/', views.loginPage, name='applicant-login-page'),
+    path('login-signup/', views.loginSignup, name='login-signup-page'),
+
 ]

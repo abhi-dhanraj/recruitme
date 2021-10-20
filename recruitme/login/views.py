@@ -5,6 +5,10 @@ from .forms import ApplicantLoginForm
 # Create your views here.
 
 
+def loginSignup(request):
+    return render(request, 'login/signupLogin.html')
+
+
 def loginPage(request):
     form = ApplicantLoginForm()
     if request.method == 'POST':
