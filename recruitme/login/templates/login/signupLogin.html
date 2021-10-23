@@ -25,17 +25,13 @@
                         {% csrf_token %}
                         {{login_form}}
 
-                <button type="submit" class="submit-btn">Login</button>
+                <button type="submit" class="submit-btn" style="margin-top: 30px;">Login</button>
             </form>
-            <!-- <form action="" id="signup" class="input-group" method="POST">
-                <input type="text" class="input-field" placeholder="Username" required>
-                <input type="email" class="input-field" placeholder="Email ID" required>
-                <input type="password" class="input-field" placeholder="Set password" required>
+            <form action="" id="signup" class="input-group" method="POST">
+                        {% csrf_token %}
+                        {{signup_form}}
                 <button type="submit" class="submit-btn" style="margin-top: 30px;">Sign Up</button>
-            </form> -->
-
-
-
+            </form>
         </div>
     </div>
 
