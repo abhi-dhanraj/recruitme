@@ -9,8 +9,8 @@ class ApplicantLoginForm(forms.ModelForm):
         model = ApplicantCredentials
         fields = ['username', 'password']
         widgets = {
-            "password": forms.PasswordInput(attrs={"placeholder": "Enter Password"}),
-            "username": forms.TextInput(attrs={"placeholder": "Enter Username"})
+            "username": forms.TextInput(attrs={"class": "input-field", "placeholder": "Username"}),
+            "password": forms.PasswordInput(attrs={"class": "input-field", "placeholder": "Password"})
             # "username":forms.TextInput(attrs={"class":"className"}) //helps to give css to input text field
         }
-        #labels = {'username': "Enter username", 'password': "Enter password"}
+        labels = {'username': "", 'password': ""}

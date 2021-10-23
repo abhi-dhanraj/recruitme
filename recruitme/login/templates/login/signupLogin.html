@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'login/css/login_signup.css' %}">
 
-    <title>Document</title>
+    <title>Recruitme | Login signup</title>
 </head>
 <body>
 
@@ -21,17 +21,18 @@
             </div>
             <!-- <img src="{% static 'login/images/login_avtar.png' %}" alt="Avatar" class="avatar"> -->
             <form action="" id="login" class="input-group" method="POST">
-                <input type="text" class="input-field" placeholder="Username" required>
-                <input type="password" class="input-field" placeholder="Password" required>
-                <input type="checkbox" class="check-box"><span>Remember password?</span>
-                <a href="#"><button type="submit" class="submit-btn">Login</button></a>
+
+                        {% csrf_token %}
+                        {{login_form}}
+
+                <button type="submit" class="submit-btn">Login</button>
             </form>
-            <form action="" id="signup" class="input-group" method="POST">
+            <!-- <form action="" id="signup" class="input-group" method="POST">
                 <input type="text" class="input-field" placeholder="Username" required>
                 <input type="email" class="input-field" placeholder="Email ID" required>
                 <input type="password" class="input-field" placeholder="Set password" required>
-                <a href="{% url 'login-signup-page'%}"><button type="submit" class="submit-btn" style="margin-top: 30px;">Sign Up</button></a>
-            </form>
+                <button type="submit" class="submit-btn" style="margin-top: 30px;">Sign Up</button>
+            </form> -->
 
 
 
@@ -43,3 +44,18 @@
     <script src="{% static 'login/js/login_base.js' %}"></script>
 </body>
 </html>
+
+<!--
+    <input type="text" class="input-field" placeholder="Username" required>
+    <input type="password" class="input-field" placeholder="Password" required>
+    <input type="checkbox" class="check-box"><span>Remember password?</span>
+
+ -->
+
+ <!--
+
+                <input type="text" class="input-field" placeholder="Username" required>
+                <input type="email" class="input-field" placeholder="Email ID" required>
+                <input type="password" class="input-field" placeholder="Set password" required>
+
+ -->
