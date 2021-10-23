@@ -6,7 +6,7 @@
     <section class="main-nav">
       <div class="mynav">
         <div class="nav-text">Dashboard</div>
-        <a href="{% url 'applicant-login-page' %}"><button class="btn my-2 my-sm-0"><img src="{% static 'recruitme/images/login-vector.png' %}" class="login_logo"><span>LOG IN</span></button></a>
+        <!-- <a href="{% url 'login-signup-page' %}"><button class="btn my-2 my-sm-0"><img src="{% static 'recruitme/images/login-vector.png' %}" class="login_logo"><span>LOG IN</span></button></a> -->
       </div>
     </section>
 
@@ -56,11 +56,97 @@
       Laboris eiusmod incididunt laboris irure sit ullamco ex nisi mollit duis ullamco consectetur. Veniam velit sit excepteur adipisicing dolor culpa commodo ex pariatur duis nostrud laboris. Cupidatat eu deserunt voluptate ad commodo ad eu occaecat dolore culpa minim eu. Mollit duis et excepteur occaecat quis sunt. Pariatur nulla anim ad ullamco sint exercitation est sit velit occaecat id cillum. Eu non sunt amet ad cillum sunt voluptate sit proident.Amet mollit Lorem qui officia commodo tempor pariatur sunt eiusmod in reprehenderit occaecat nisi. Tempor elit tempor occaecat Lorem esse ut aliquip do in labore eu commodo mollit. Tempor qui tempor consequat mollit minim non cupidatat ullamco voluptate labore exercitation. Aute elit ut esse Lorem id laboris excepteur magna nulla laboris quis non deserunt. Labore magna Lorem enim ex occaecat dolor minim veniam anim amet incididunt est mollit. Eiusmod duis veniam voluptate in Lorem.
       Cupidatat dolor labore deserunt amet ut irure. Tempor deserunt non irure culpa proident Lorem fugiat anim dolor fugiat in id qui. Nisi mollit minim quis eu cillum nostrud et ipsum. Non nulla qui nisi amet. Pariatur cupidatat ut excepteur sint Lorem quis ad eiusmod.
       Est aute nisi qui ad laboris in et ad aute in. Irure consectetur eu do velit adipisicing excepteur duis ad irure quis elit. Velit culpa laborum ex cillum in cillum esse consectetur veniam est est. Aute minim sit occaecat eiusmod ullamco do cillum est do. Commodo labore amet velit proident.
+    </div> -->
+    <div class="statusCards" style="margin-bottom: 50px;">
+      <div class="card-deck" style="color: white;text-align: center;">
+        <div class="card" style="background: #4cb4c7; ">
+          <h5 class="card-header">Total Applied</h5>
+          <div class="card-body">
+            <h2 class="card-text">2</h2>
+          </div>
+        </div>
+        <div class="card" style="background: #7abecc;">
+          <h5 class="card-header">Selected</h5>
+          <div class="card-body">
+            <h2 class="card-text">6</h2>
+          </div>
+        </div>
+        <div class="card" style="background: #7cd1c0;">
+          <h5 class="card-header">Pending</h5>
+          <div class="card-body">
+            <h2 class="card-text">5</p>
+          </div>
+        </div>
+      </div>
     </div>
-     -->
 
-     {% include 'recruitme/card.html'%}
+
+    {% include 'recruitme/dashboardAppliedCard.html' %}
+    {% include 'recruitme/dashboardAppliedCard.html' %}
+    {% include 'recruitme/dashboardAppliedCard.html' %}
+
+
+    <!-- /*****************/ -->
+
 
     </section>
-</section>
-{% endblock %}
+  </section>
+  {% endblock %}
+
+  <!-- {% include 'recruitme/card.html'%} -->
+
+  <!-- <table class="table table-borderless">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table> -->
+
+
+
+      <!-- /*****************/ -->
+
+
+      <!--
+        <div class="container" style="text-align: center;">
+          <div class="row">
+            <div class="col-8">
+              <div class="row" style="justify-content: center;">Stage</div>
+              <div class="row">
+                <div class="col">Apti</div>
+                <div class="col">Interview</div>
+                <div class="col">Best fitment</div>
+                <div class="col">HR</div>
+              </div>
+            </div>
+            <div class="col">Total Points</div>
+            <div class="col">status</div>
+          </div>
+        </div>
+
+
+
+       -->

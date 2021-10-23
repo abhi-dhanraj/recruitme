@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'login/css/login_signup.css' %}">
+
+    <title>Recruitme | Login signup</title>
+</head>
+<body>
+
+    <div class="login_main_container">
+        <div class="form-box animate">
+            <a href="{% url 'jobs' %}"><span class="close" title="Close Modal">&times;</span></a>
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                <button type="button" class="toggle-btn" onclick="signup()">Sign Up</button>
+            </div>
+            <!-- <img src="{% static 'login/images/login_avtar.png' %}" alt="Avatar" class="avatar"> -->
+            <form action="" id="login" class="input-group" method="POST">
+
+                        {% csrf_token %}
+                        {{login_form}}
+
+                <button type="submit" class="submit-btn" style="margin-top: 30px;">Login</button>
+            </form>
+            <form action="" id="signup" class="input-group" method="POST">
+                        {% csrf_token %}
+                        {{signup_form}}
+                <button type="submit" class="submit-btn" style="margin-top: 30px;">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+
+
+    <script src="{% static 'login/js/login_base.js' %}"></script>
+</body>
+</html>
+
+<!--
+    <input type="text" class="input-field" placeholder="Username" required>
+    <input type="password" class="input-field" placeholder="Password" required>
+    <input type="checkbox" class="check-box"><span>Remember password?</span>
+
+ -->
+
+ <!--
+
+                <input type="text" class="input-field" placeholder="Username" required>
+                <input type="email" class="input-field" placeholder="Email ID" required>
+                <input type="password" class="input-field" placeholder="Set password" required>
+
+ -->

@@ -2,11 +2,8 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  --bs-bg-opacity: 1;
-  background-color: rgba(
-    var(--bs-primary-rgb),
-    var(--bs-bg-opacity)
-  ) !important;
+  opacity: 1;
+  background-color: #2867ee !important;
 }
 /* Full-width input fields */
 input[type="text"],
@@ -27,7 +24,7 @@ input[type="password"] {
 
 /* Set a style for all buttons */
 button {
-  /* background-color: #04AA6D; */
+  /* background-color: #04aa6d; */
   background-color: #ffc107;
   color: #000;
   font-family: "Poppins", sans-serif;

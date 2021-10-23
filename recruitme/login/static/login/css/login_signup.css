@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,200;1,300;1,400;1,500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.login_main_container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #2867ee;
+}
+.form-box {
+  width: 880px;
+  height: 540px;
+  /* useless
+  width: 380px;
+  height: 480px; */
+  position: relative;
+  margin: 6% auto;
+  background: #fff;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
+}
+.button-box {
+  width: 250px;
+  margin: 35px auto;
+  position: relative;
+  box-shadow: 0 0 20px 9px #ff61241f;
+  border-radius: 30px;
+}
+.toggle-btn {
+  padding: 10px 30px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  outline: none;
+  position: relative;
+  text-align: center;
+}
+#btn {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 125px;
+  height: 100%;
+  border-radius: 30px;
+  background: #ffc107;
+  transition: 0.5s;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.input-group {
+  top: 180px;
+  position: absolute;
+  width: 700px;
+  transition: 0.5s;
+}
+.input-group a {
+  text-align: center;
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}
+.input-field {
+  width: 100%;
+  padding: 10px 0;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid #999;
+  outline: none;
+  background: transparent;
+}
+.submit-btn {
+  width: 85%;
+  /* height: 40px; */
+  /* width: 100%; */
+  padding: 10px 30px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  background: #ffc107;
+  border: 0;
+  outline: none;
+  border-radius: 30px;
+  box-shadow: rgba(134, 92, 92, 0.35) 0px 5px 15px;
+}
+
+.check-box {
+  margin: 30px 10px 30px 0px;
+}
+span {
+  color: #777;
+  font-size: 18px;
+  position: absolute;
+  bottom: 68px;
+}
+#login {
+  /* left: 50px; */
+  left: 100px;
+}
+#signup {
+  /* left: 450px; */
+  left: 900px;
+}
+
+.close {
+  position: absolute;
+  right: 25px;
+  top: 5px;
+  color: rgb(110, 110, 110);
+  font-size: 35px;
+  font-weight: bold;
+  height: 60px;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s;
+}
+
+@-webkit-keyframes animatezoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes animatezoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+img.avatar {
+  width: 20%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+}
