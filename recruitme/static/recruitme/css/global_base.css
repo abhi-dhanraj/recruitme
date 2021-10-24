@@ -1,4 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+:root {
+  --recruitmeBackground: #2867ee !important;
+  --recruitmeButtonColor: #ffc107;
+  --recruitmeButtonHoverColor: #ffd24b;
+  --recruitmeButtonTextColor: #000;
+
+  /* --recruitmeBackground: #200644 !important;
+  --recruitmeButtonColor: rgb(255, 0, 212);
+  --recruitmeButtonHoverColor: rgb(177, 0, 135);
+  --recruitmeButtonTextColor: #fff; */
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +24,7 @@
   top: 0;
   height: 100%;
   width: 78px;
-  background-color: #2867ee;
+  background-color: var(--recruitmeBackground);
   padding: 6px 14px;
   z-index: 99;
   transition: all 0.5s ease;
@@ -91,7 +104,7 @@
   transition: all 0.4s ease;
 }
 .sidebar li a:hover {
-  background: #ffc107;
+  background: var(--recruitmeButtonColor);
   color: black;
 }
 .sidebar li a .links_name {
@@ -171,8 +184,8 @@
   }
 }
 .mynav a button {
-  background-color: #ffc107;
-  border-color: #ffc107;
+  background-color: var(--recruitmeButtonColor);
+  border-color: var(--recruitmeButtonColor);
   /* width: 140px; */
   height: 50px;
   margin-right: 0px;
@@ -181,12 +194,13 @@
   outline: none;
 }
 .mynav button:hover {
-  background: #ffd24b;
-  border-color: #ffd24b;
+  background: var(--recruitmeButtonHoverColor);
+  border-color: var(--recruitmeButtonHoverColor);
 }
 
 .mynav a button span {
-  color: black;
+  /* color: black; */
+  color: var(--recruitmeButtonTextColor);
   font-family: "Poppins", sans-serif;
   font-size: 23px;
   font-weight: 600;
@@ -265,7 +279,7 @@
   list-style: none;
   text-decoration: none;
   float: right;
-  color: #2867ee;
+  color: var(--recruitmeBackground);
 }
 /***************************/
 @media (max-width: 720px) {
