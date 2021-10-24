@@ -13,7 +13,7 @@
 
     <div class="login_main_container">
         <div class="form-box animate">
-            <a href="{% url 'jobs' %}"><span class="close" title="Close Modal">&times;</span></a>
+            <a href="{% url 'jobs' %}"><span class="close" title="Close">&times;</span></a>
             <div class="button-box">
                 <div id="btn"></div>
                 <button type="button" class="toggle-btn" onclick="login()">Log In</button>
@@ -25,7 +25,7 @@
                         {% csrf_token %}
                         {{login_form}}
 
-                <button type="submit" class="submit-btn" style="margin-top: 30px;">Login</button>
+                <button type="submit" class="submit-btn" style="margin-top: 76px;">Login</button>
             </form>
             <form action="" id="signup" class="input-group" method="POST">
                         {% csrf_token %}

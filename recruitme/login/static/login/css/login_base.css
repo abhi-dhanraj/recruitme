@@ -1,9 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,200;1,300;1,400;1,500&display=swap");
 
+:root {
+  --recruitmeBackground: #2867ee !important;
+  --recruitmeButtonColor: #ffc107;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   opacity: 1;
-  background-color: #2867ee !important;
+  background-color: var(--recruitMebackground);
 }
 /* Full-width input fields */
 input[type="text"],
@@ -25,7 +30,7 @@ input[type="password"] {
 /* Set a style for all buttons */
 button {
   /* background-color: #04aa6d; */
-  background-color: #ffc107;
+  background-color: var(--recruitmeButtonColor);
   color: #000;
   font-family: "Poppins", sans-serif;
   padding: 14px 20px;
