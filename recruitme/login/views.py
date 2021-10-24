@@ -29,7 +29,7 @@ def loginSignup(request):
             print(emailID)
             print(newPassword)
             # time to save these into mysql database
-            # form.save()
+            signup_form.save()
             return redirect('profile')  # should redirect to profile
 
         else:

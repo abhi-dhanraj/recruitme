@@ -306,3 +306,37 @@
     border-right-width: 2px;
   }
 }
+/*************************************************/
+/*************************************************/
+/*************************************************/
+/*************************************************/
+/*************************************************/
+/*************************************************/
+.profileMain {
+  margin: auto 100px;
+  margin-top: 50px;
+  background-color: #edfafc;
+  outline: none;
+  border: #edfafc;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+  margin-bottom: 50px;
+  border-radius: 20px;
+}
+.profile-pic {
+  display: inline-block;
+  margin: auto;
+  height: 130px;
+}
+.profile-pic img {
+  position: relative;
+  bottom: 70px;
+  width: 180px;
+  height: 180px;
+  border-radius: 100px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.profileMain .card-body {
+  margin: auto 80px;
+}
