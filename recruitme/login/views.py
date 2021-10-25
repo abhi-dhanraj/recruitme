@@ -39,7 +39,9 @@ def loginSignup(request):
     else:
         login_form = ApplicantLoginForm()
         signup_form = ApplicantSignUpForm()
-    return render(request, 'login/signupLogin.html', {'login_form': login_form, 'signup_form': signup_form})
+
+    context = {'login_form': login_form, 'signup_form': signup_form}
+    return render(request, 'login/signupLogin.html', context)
 
 
 def loginPage(request):
