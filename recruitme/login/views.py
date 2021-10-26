@@ -29,7 +29,7 @@ def loginSignup(request):
             print(emailID)
             print(newPassword)
             # time to save these into mysql database
-            # form.save()
+            signup_form.save()
             return redirect('profile')  # should redirect to profile
 
         else:
@@ -39,7 +39,9 @@ def loginSignup(request):
     else:
         login_form = ApplicantLoginForm()
         signup_form = ApplicantSignUpForm()
-    return render(request, 'login/signupLogin.html', {'login_form': login_form, 'signup_form': signup_form})
+
+    context = {'login_form': login_form, 'signup_form': signup_form}
+    return render(request, 'login/signupLogin.html', context)
 
 
 def loginPage(request):
