@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import ApplicantLoginForm, ApplicantSignUpForm
-
+from .models import ApplicantLoggedIn,ApplicantSignedUp
 
 # Create your views here.
 
@@ -15,10 +15,14 @@ def loginSignup(request):
             print("login form created!")
             username = login_form.cleaned_data['username']
             password = login_form.cleaned_data['password']
-            print(username)
-            print(password)
+            check = ApplicantSignedUp.objects.raw('SELECT password from ApplicantLoginForm where username = %s'%username)[0]
+            print(check.newPassword,password)
+            if check==password:
+                return redirect('dashboard')
+            else:
+                return redirect('login-signup-page')  
             # time to save these into mysql database
-            # form.save()
+            # login_form.save()
             return redirect('dashboard')  # should redirect to dashboard
         elif signup_form.is_valid():
             print("Signup form Created!")
@@ -29,7 +33,7 @@ def loginSignup(request):
             print(emailID)
             print(newPassword)
             # time to save these into mysql database
-            # form.save()
+            signup_form.save()
             return redirect('profile')  # should redirect to profile
 
         else:
@@ -42,18 +46,3 @@ def loginSignup(request):
     return render(request, 'login/signupLogin.html', {'login_form': login_form, 'signup_form': signup_form})
 
 
-def loginPage(request):
-    form = ApplicantLoginForm()
-    if request.method == 'POST':
-        form = ApplicantLoginForm(request.POST)
-        if form.is_valid():
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
-            # form.save()
-
-            print(username)
-            print(password)
-            # time to save these into mysql database
-            return redirect('dashboard')  # should redirect to dashboard
-
-    return render(request, 'login/login.html', {'form': form})
