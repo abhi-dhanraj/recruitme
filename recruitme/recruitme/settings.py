@@ -85,9 +85,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'recruitme',
         'USER': 'root',
-        'PASSWORD': '', # enter password of mysql 
-        'HOST' :'localhost',
-        'PORT':3306,
+        'PASSWORD': '',  # enter password of mysql
+        'HOST': 'localhost',
+        'PORT': 3306,
     }
 }
 # Password validation
