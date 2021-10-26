@@ -1,11 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import ApplicantLoginForm, ApplicantSignUpForm
-<<<<<<< HEAD
-from .models import ApplicantLoggedIn,ApplicantSignedUp
-=======
 from .models import ApplicantSignedUp, ApplicantLoggedIn
->>>>>>> origin/main
 
 # Create your views here.
 
@@ -19,17 +15,6 @@ def loginSignup(request):
             print("login form created!")
             username = login_form.cleaned_data['username']
             password = login_form.cleaned_data['password']
-<<<<<<< HEAD
-            check = ApplicantSignedUp.objects.raw('SELECT password from ApplicantLoginForm where username = %s'%username)[0]
-            print(check.newPassword,password)
-            if check==password:
-                return redirect('dashboard')
-            else:
-                return redirect('login-signup-page')  
-            # time to save these into mysql database
-            # login_form.save()
-            return redirect('dashboard')  # should redirect to dashboard
-=======
             # time to save these into mysql database
             # form.save()
 
@@ -50,7 +35,6 @@ def loginSignup(request):
                     # should redirect to login page
                     return redirect('login-signup-page')
 
->>>>>>> origin/main
         elif signup_form.is_valid():
             print("Signup form Created!")
             username = signup_form.cleaned_data['username']
@@ -61,11 +45,8 @@ def loginSignup(request):
             print(newPassword)
             # time to save these into mysql database
             signup_form.save()
-<<<<<<< HEAD
-=======
             ApplicantLoggedIn.objects.create(
                 username=username, password=newPassword)
->>>>>>> origin/main
             return redirect('profile')  # should redirect to profile
 
         else:
@@ -80,3 +61,18 @@ def loginSignup(request):
     return render(request, 'login/signupLogin.html', context)
 
 
+def loginPage(request):
+    form = ApplicantLoginForm()
+    if request.method == 'POST':
+        form = ApplicantLoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            # form.save()
+
+            print(username)
+            print(password)
+            # time to save these into mysql database
+            return redirect('dashboard')  # should redirect to dashboard
+
+    return render(request, 'login/login.html', {'form': form})
