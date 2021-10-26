@@ -20,12 +20,13 @@
                 <button type="button" class="toggle-btn" onclick="signup()">Sign Up</button>
             </div>
             <!-- <img src="{% static 'login/images/login_avtar.png' %}" alt="Avatar" class="avatar"> -->
+
             <form action="" id="login" class="input-group" method="POST">
 
                         {% csrf_token %}
                         {{login_form}}
 
-                <button type="submit" class="submit-btn" style="margin-top: 76px;">Login</button>
+                <button type="submit" class="submit-btn" style="margin-top: 76px;" >Login</button>
             </form>
             <form action="" id="signup" class="input-group" method="POST">
                         {% csrf_token %}
