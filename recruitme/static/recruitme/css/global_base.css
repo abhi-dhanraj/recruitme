@@ -297,12 +297,28 @@
     width: 15px;
     height: 15px;
   }
+
+  .main-container .nav-text {
+    height: 42px;
+  }
 }
 @media (max-width: 620px) {
   .main-container .nav-text,
   .main-container .nav-text.animated {
     font-size: 20px;
     border-right-width: 2px;
+  }
+
+  .main-container .nav-text {
+    height: 30px;
+  }
+
+  #application-btn {
+    font-size: 13px;
+  }
+
+  #job-details-content {
+    font-size: 13px;
   }
 }
 /*************************************************/
@@ -338,4 +354,8 @@
 }
 .profileMain .card-body {
   margin: auto 80px;
+}
+
+#application-btn {
+  font-family: "Poppins", sans-serif;
 }
