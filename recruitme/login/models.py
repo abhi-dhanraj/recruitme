@@ -12,3 +12,7 @@ class ApplicantSignedUp(models.Model):
     username = models.CharField(max_length=70)
     emailID = models.EmailField(max_length=70)
     newPassword = models.CharField(max_length=50)
+
+
+
+

@@ -1,11 +1,21 @@
 {% load static %}
-
+{% load crispy_forms_tags %}
 <div class="card profileMain">
     <div class="profile-pic">
         <img class="pic" src="{% static 'recruitme/images/profile-pic-dummy.png' %}" alt="profile-pic"/>
     </div>
     <div class="card-body">
-        <form>
+
+        <form method="POST">
+            {% csrf_token %}
+            {{ profile|crispy }}
+            <button type="submit" class="btn btn-info">Save</button>
+        </form>
+
+    </div>
+</div>
+
+<!--<form>
             <section class="personalInfo" style="margin-bottom: 40px;">
             <h4>Personal Info</h4>
             <hr />
@@ -63,8 +73,4 @@
                 </section>
 
             <button type="submit" class="btn btn-info">Save</button>
-        </form>     <!-- form ends -->
-
-
-    </div>
-</div>
+        </form>      form ends -->
