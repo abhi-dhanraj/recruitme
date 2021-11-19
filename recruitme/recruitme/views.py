@@ -2,19 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 
-# Create your views here.
-
-# def mainPage(request):
-#     # return HttpResponse("This is HomePage")
-#     return render(request, 'recruitme/main.html')
-
-
 def dashboardPage(request):
+    print(request.session['username'])
     return render(request, 'recruitme/dashboardPage.html')
-
-
-def profilePage(request):
-    return render(request, 'recruitme/profilePage.html')
 
 
 def jobsPage(request):
