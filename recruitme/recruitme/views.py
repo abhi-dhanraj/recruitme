@@ -23,3 +23,7 @@ def jobsPage(request):
 
 def jobDetailsPage(request):
     return render(request, 'recruitme/jobDetailsPage.html')
+
+
+def applicationFormPage(request):
+    return render(request, 'recruitme/applicationForm.html')

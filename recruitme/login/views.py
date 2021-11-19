@@ -43,6 +43,10 @@ def loginSignup(request):
             print(username)
             print(emailID)
             print(newPassword)
+
+            query = "select 1 as id, exists(select * from login_applicantloggedin WHERE username='" + \
+                username+"' or emailID='"+emailID+"') as isPresent;"
+
             # time to save these into mysql database
             signup_form.save()
             ApplicantLoggedIn.objects.create(
