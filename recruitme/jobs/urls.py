@@ -19,7 +19,7 @@ from . import views
 
 urlpatterns = [
     # separatly handling login app routes
-    
+
     path('', views.jobsPage, name="jobs"),
     path('jobs/', views.jobsPage, name="jobs"),
     path('jobs/apply/', views.jobDetailsPage, name="apply"),
