@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'login',
     'applicant',
     'jobs',
+    'application',
     
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

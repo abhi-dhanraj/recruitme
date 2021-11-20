@@ -54,7 +54,7 @@ def loginSignup(request):
                     ApplicantLoggedIn.objects.create(
                         username=username, password=newPassword)
                     request.session["username"] = username
-                    return redirect('profile')  # should redirect to profile
+                    return redirect('profile-page')  # should redirect to profile
 
         else:
             print(login_form._errors)

@@ -22,4 +22,5 @@ urlpatterns = [
     path('', include('login.urls')),  # adding login django app urls
     path('', include('applicant.urls')),
     path('', include('jobs.urls')),
+    path('', include('application.urls'))
 ]

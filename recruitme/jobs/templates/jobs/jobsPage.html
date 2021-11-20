@@ -26,7 +26,7 @@
                   
                   <p class="card-text">Start Date: <span>{{job.start_date}}</span></p>
                   <p class="card-text">Apply Date: <span>{{job.apply_by_date}}</span></p>
-                  <a href="{% url 'apply' %}" id="more-details">Apply Now<i class='bx bxs-chevrons-right' ></i></a>
+                  <a href="{% url 'apply' job.job_id %}" id="more-details">Apply Now<i class='bx bxs-chevrons-right' ></i></a>
               </div>
           </div>
         </div>
