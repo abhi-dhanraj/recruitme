@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'login',
     'applicant',
+    'jobs',
 
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -136,6 +137,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
     # This is Added by Omkar | used to access login app's static files
     os.path.join(BASE_DIR, 'login/static/'),
+    os.path.join(BASE_DIR, 'applicant/static/'),
 ]
 
 

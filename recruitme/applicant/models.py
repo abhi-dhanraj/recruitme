@@ -11,3 +11,9 @@ class applicant(models.Model):
     degree = models.CharField(max_length=70)
     graduation_year = models.DateField()
     
+class institue(models.Model):
+    institue_id = models.CharField(max_length=10)
+    name = models.CharField(max_length=70)
+    tnp_contact = models.BigIntegerField()
+    students_applied = models.IntegerField()
+
