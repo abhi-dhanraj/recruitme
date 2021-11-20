@@ -2,10 +2,9 @@
 {% load crispy_forms_tags %}
 <div class="card profileMain">
     <div class="profile-pic">
-        <img class="pic" src="{% static 'recruitme/images/profile-pic-dummy.png' %}" alt="profile-pic"/>
+        <img class="pic" src="{% static 'applicant/images/profile-pic-dummy.png' %}" alt="profile-pic"/>
     </div>
     <div class="card-body">
-
         <form method="POST">
             {% csrf_token %}
             {{ profile|crispy }}
