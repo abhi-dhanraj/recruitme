@@ -16,28 +16,65 @@
         <div class="card" style="background: #4cb4c7; ">
           <h5 class="card-header">Total Applied</h5>
           <div class="card-body">
-            <h2 class="card-text">2</h2>
+            <h2 class="card-text">{{total_applied}}</h2>
           </div>
         </div>
         <div class="card" style="background: #7abecc;">
           <h5 class="card-header">Selected</h5>
           <div class="card-body">
-            <h2 class="card-text">6</h2>
+            <h2 class="card-text">{{total_selected}}</h2>
           </div>
         </div>
         <div class="card" style="background: #7cd1c0;">
           <h5 class="card-header">Pending</h5>
           <div class="card-body">
-            <h2 class="card-text">5</p>
+            <h2 class="card-text">{{total_applied}}</p>
           </div>
         </div>
       </div>
     </div>
+    <div class="card dashboardCard" style = "margin-bottom : 50px">
+    {%for app,job,process,round in applications%}
+      
+      <h5 class="card-header" style="text-align: center;">{{job.title}}</h5>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-8" style="border-right: 2px solid rgb(201, 201, 201);">
+            <div class="row" style="justify-content: center;">Stage: {{round.stage}}</div>
+            <div class="row" style="text-align: center;margin-top: 10px;">
+              <div class="col">Aptitude</div>
+              <div class="col">Inteview</div>
+              <div class="col">Fitment</div>
+              <div class="col">HR</div>
+            </div>
+          </div>
+          <div class="col" style="text-align: center;">Total points</div>
+          <div class="col"  style="text-align: center;">Status</div>
+        </div>
 
-
-    {% include 'jobs/dashboardAppliedCard.html' %}
-    {% include 'jobs/dashboardAppliedCard.html' %}
-    {% include 'jobs/dashboardAppliedCard.html' %}
+        <div class="row" style="margin-top: 10px;">
+          <div class="col-8" >
+            <div class="row" style="text-align: center;margin-top: 10px;">
+              <div class="col">{{round.aptitude}}</div>
+              <div class="col">{{round.interview}}</div>
+              <div class="col">{{round.professional_fitment}}</div>
+              <div class="col">{{round.hr}}</div>
+            </div>
+          </div>
+          <div class="col" style="text-align: center;">{{round.total_points}}/400</div>
+          <div class="col"  style="text-align: center;">
+          {%if process.status%}
+          Selected
+          {%else%}
+          Not Selected
+          {%endif%}     
+           
+          </div>
+          
+      </div>
+       
+  </div>
+  {%endfor%}
 
 
     <!-- /*****************/ -->
