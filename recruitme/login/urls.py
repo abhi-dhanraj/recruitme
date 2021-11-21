@@ -21,6 +21,6 @@ urlpatterns = [
     # separatly handling login app routes
     
     path('login/', views.loginPage, name='loginedIn'),
-    path('login-signup/', views.loginSignup, name='login-signup-page')
-    
+    path('login-signup/', views.loginSignup, name='login-signup-page'),
+    path('', views.Logout, name='logout-page')
 ]

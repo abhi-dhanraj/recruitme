@@ -1,0 +1,14 @@
+{% extends 'recruitme/index.html' %}
+
+{% load static %}
+{% block content %}
+<section class="main-container">
+    <section class="content">
+        <div><h1><br>Hey There!<br> It seems you havn't logged In yet</h1>
+            <img src=" {%static 'recruitme/images/login-error.gif'%}" style = "border-radius:100px; height:400px;width :400px" class="img-fluid mx-auto d-block"  alt="Responsive image">
+            <a href="{% url 'login-signup-page' %}"><button type="button" style="margin-bottom:40px" class="btn btn-primary btn-lg btn-block">Sign up / Log In</button></a>
+        </div>
+    </section>
+</section>
+{% endblock %}
+<!-- <a href="{% url 'applicant-login-page' %}"><button class="btn my-2 my-sm-0"><img src="{% static 'recruitme/images/login-vector.png' %}" class="login_logo"><span>LOG IN</span></button></a> -->
