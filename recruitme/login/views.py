@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login,logout
 from django.http import HttpResponse
 from .forms import ApplicantLoginForm, ApplicantSignUpForm
 from .models import ApplicantSignedUp, ApplicantLoggedIn
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -23,6 +26,9 @@ def loginSignup(request):
                     print("USER IS PRESENT")
                     # should redirect to dashboard
                     request.session["username"] = username
+                    USER = authenticate(username=username, password=password)
+                    if USER is not None:
+                        login(request,user)
                     return redirect('dashboard')
                 else:
                     print("USER IS NOT PRESENT")
@@ -33,6 +39,7 @@ def loginSignup(request):
             username = signup_form.cleaned_data['username']
             emailID = signup_form.cleaned_data['emailID']
             newPassword = signup_form.cleaned_data['newPassword']
+            USER = User.objects.create_user(username,emailID,newPassword)
             print(username)
             print(emailID)
             print(newPassword)
@@ -50,6 +57,10 @@ def loginSignup(request):
                     # should redirect to login page
                     # time to save these into mysql database
                     signup_form.save()
+                    USER.save()
+                    USER = authenticate(request, username=username, password=newPassword)
+                    if USER is not None:
+                        login(request,USER)
                     ApplicantLoggedIn.objects.create(
                         username=username, password=newPassword)
                     request.session["username"] = username
@@ -75,7 +86,9 @@ def loginPage(request):
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
             # form.save()
-
+            USER = authenticate(request, username=username, password=password)
+            if USER is not None:
+                login(request,USER)
             print(username)
             print(password)
             request.session["username"] = username
@@ -84,3 +97,8 @@ def loginPage(request):
             return redirect('dashboard')  # should redirect to dashboard
 
     return render(request, 'login/login.html', {'form': form})
+
+def Logout(request):
+    logout(request)
+    request.session['username'] = None
+    return redirect('jobs')

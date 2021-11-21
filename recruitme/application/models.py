@@ -33,23 +33,23 @@ class rounds(models.Model):
 
 
 class process(models.Model):
-    status = models.BinaryField()
+    status = models.BooleanField()
     round_id = models.ForeignKey(rounds,on_delete=CASCADE)
 
 class application(models.Model):
-    applicant_id = models.ForeignKey(applicant,on_delete = CASCADE,null=False);
-    process_id = models.ForeignKey(process,on_delete=CASCADE,null=False)
-    job_id = models.ForeignKey(jobs,on_delete=CASCADE,null=False)
-    institute_id = models.ForeignKey(institute,on_delete = CASCADE,null=False)
-    degree = models.CharField(null=False,max_length=70)
+    applicant_id = models.ForeignKey(applicant,on_delete = CASCADE,null=True);
+    process_id = models.ForeignKey(process,on_delete=CASCADE,null=True)
+    job_id = models.ForeignKey(jobs,on_delete=CASCADE,null=True)
+    institute_id = models.ForeignKey(institute,on_delete = CASCADE,null=True)
+    degree = models.CharField(max_length=70,null=True)
     graduation_year = models.DateField(null=True)
     cgpa = models.FloatField(default = 0.0,validators=[
             MaxValueValidator(10.0),
             MinValueValidator(0.0)
         ])
-    experience = models.TextField(null=False)
-    date_of_application = models.DateField(null=False)
-    ans = models.TextField(null=False)
+    experience = models.TextField(null=True)
+    date_of_application = models.DateField(null=True)
+    ans = models.TextField(null=True)
 
 
 
