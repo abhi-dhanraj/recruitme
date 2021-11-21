@@ -5,15 +5,49 @@
 <section class="main-container">
     <section class="main-nav">
       <div class="mynav">
-        <div class="nav-text">My Application</div>
+        <div class="nav-text">My application for: " {{JobTitle}} "</div>
       </div>
     </section>
 
     <section class="content">
       <div class="text-content">
-        Ea do officia ut in anim pariatur fugiat dolore elit fugiat aute. Nisi voluptate adipisicing reprehenderit nostrud consectetur amet exercitation culpa. Qui ex irure eiusmod ullamco laborum labore ea qui occaecat occaecat. Dolore eu deserunt labore do Lorem minim velit id exercitation proident. Ut velit qui aliqua minim in laborum commodo velit elit ea officia laborum labore.Magna mollit occaecat deserunt aute minim commodo ad in ipsum excepteur tempor laboris tempor non. Nisi culpa do cupidatat dolore quis anim duis laborum laborum. Adipisicing non quis minim nulla cillum ullamco consequat incididunt deserunt enim sint aliquip adipisicing dolor. Anim Lorem commodo deserunt minim.
-      </div>
+          <div>
+            <form method="post" style="margin: 40px auto;width: 50vw;">
+              <h5>Fill the following form to continue with application</h5>
+              <br>
+              <div class="form-group">
+                  <label for="inputInstitute">Institute<span style="color: red;">*<span></label>
+                  <input type="text" class="form-control" id="inputInstitute" placeholder="e.g. Pune Institute of Computer Technology" required>
+              </div>
+              <div class="form-row">
+                  <div class="form-group col-md-6">
+                  <label for="inputDegree">Degree<span style="color: red;">*<span></label>
+                      <input type="text" class="form-control" id="inputDegree" placeholder="Bachelor's" required>
+                  </div>
+                  <div class="form-group col-md-6">
+                      <label for="cgpa">CGPA<span style="color: red;">*<span></span></label>
+                      <input type="number" min="0" max="10" step="1" class="form-control"/>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="yearOfGraduation">Year of Graduation<span style="color: red;">*<span></span></label>
+                        <input type="number" min="1900" max="2099" step="1" value="2023" class="form-control"/>
+                        <i class="fas fa-calendar input-prefix" tabindex=0></i>
+              </div>
+              <div class="form-group">
+                <label for="experience">Experience<span style="color: red;">*<span></span></label>
+                <textarea class="form-control" id="experience" rows="5" placeholder="mention your skills,projects,work sample etc..." required></textarea>
+              </div>
+              <div class="form-group">
+                <label for="experience">Why should you be hired for this role?<span style="color: red;">*<span></span></label>
+                <textarea class="form-control" id="experience" rows="5" required></textarea>
+              </div>
 
+              <button type="submit" class="btn btn-success w-100">confirm application</button>
+          </form>
+        </div><!--card body end-->
+
+      </div>
     </section>
-</section>
-{% endblock %}
+  </section>
+  {% endblock %}

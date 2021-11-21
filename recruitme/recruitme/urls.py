@@ -19,8 +19,8 @@ from django.http import HttpResponse
 from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('jobs.urls')),
     path('', include('login.urls')),  # adding login django app urls
+    path('', include('jobs.urls')),
     path('', include('applicant.urls')),
     path('jobs/apply/myApplication/',
          views.applicationFormPage, name='application-form'),

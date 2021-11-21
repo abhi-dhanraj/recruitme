@@ -22,6 +22,8 @@ urlpatterns = [
 
     path('', views.jobsPage, name="jobs"),
     path('jobs/', views.jobsPage, name="jobs"),
-    path('jobs/apply/', views.jobDetailsPage, name="apply"),
-    path('dashboard/', views.dashboardPage, name="dashboard")
+    path('jobs/apply/<int:job_id>/', views.jobDetailsPage, name="apply"),
+    path('dashboard/', views.dashboardPage, name="dashboard"),
+    path('jobs/apply/<int:job_id>/application-form',
+         views.applicationFormPage, name='application-form')
 ]
