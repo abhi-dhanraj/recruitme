@@ -4,7 +4,6 @@ from .forms import Applicant
 def profilepage(request):
     profile = Applicant()
     if request.method == "POST":
-        print("idfsfjdsjknjk")
         profile = Applicant(request.POST)
         if profile.is_valid():
             profile.save()

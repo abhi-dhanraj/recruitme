@@ -15,7 +15,22 @@
       <!-- <div class="text-content">
         Ea do officia ut in anim pariatur fugiat dolore elit fugiat aute. Nisi voluptate adipisicing reprehenderit nostrud consectetur amet exercitation culpa. Qui ex irure eiusmod ullamco laborum labore ea qui occaecat occaecat. Dolore eu deserunt labore do Lorem minim velit id exercitation proident. Ut velit qui aliqua minim in laborum commodo velit elit ea officia laborum labore.Magna mollit occaecat deserunt aute minim commodo ad in ipsum excepteur tempor laboris tempor non. Nisi culpa do cupidatat dolore quis anim duis laborum laborum. Adipisicing non quis minim nulla cillum ullamco consequat incididunt deserunt enim sint aliquip adipisicing dolor. Anim Lorem commodo deserunt minim.
       </div> -->
-      {% include 'recruitme/jobCard.html'%}
+      {%for job in Jobs%}
+      
+        <div class="jobCards">
+          <div class="card w-75">
+              <h4 class="card-header" style="background: white;">{{job.title}}</h4>
+              <div class="card-body">
+                  <p class="card-text">Job ID: <span>{{job.job_id}}</span></p>
+                  <p class="card-title">Job position: <span>{{job.jobs_position}}</span></p>
+                  
+                  <p class="card-text">Start Date: <span>{{job.start_date}}</span></p>
+                  <p class="card-text">Apply Date: <span>{{job.apply_by_date}}</span></p>
+                  <a href="{% url 'apply' job.job_id %}" id="more-details">Apply Now<i class='bx bxs-chevrons-right' ></i></a>
+              </div>
+          </div>
+        </div>
+      {%endfor%}
     </section>
 </section>
 {% endblock %}

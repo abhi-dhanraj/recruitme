@@ -7,7 +7,11 @@ class applicant(models.Model):
     phone_no = models.BigIntegerField()
     emailID = models.EmailField(max_length=70)
     nationality = models.CharField(max_length=70)
-    institute = models.CharField(max_length=70)
-    degree = models.CharField(max_length=70)
-    graduation_year = models.DateField()
     
+    
+class institute(models.Model):
+    institute_id = models.CharField(max_length=10)
+    name = models.CharField(max_length=70)
+    tnp_contact = models.BigIntegerField()
+    students_applied = models.IntegerField()
+
