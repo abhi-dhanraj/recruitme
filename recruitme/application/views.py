@@ -1,10 +1,11 @@
 from django.shortcuts import redirect, render
-import datetime 
+import datetime
 from applicant.models import applicant, institute
 from .forms import Application
 from jobs.models import jobs
-from .models import rounds,process,application
+from .models import rounds, process, application
 # Create your views here.
+
 
 def applicationFormPage(request, job_id):
     appform = Application()
@@ -13,9 +14,10 @@ def applicationFormPage(request, job_id):
         print(appform.is_valid())
         if appform.is_valid():
             print("YESSS")
-            round = rounds.objects.create(aptitude = 0,interview = 0,professional_fitment = 0,hr = 0,stage = 0,total_points = 0)
+            round = rounds.objects.create(
+                aptitude=0, interview=0, professional_fitment=0, hr=0, stage=0, total_points=0)
             round.save()
-            Process = process.objects.create(status = False,round_id = round)
+            Process = process.objects.create(status=False, round_id=round)
             Process.save()
             institute_id = appform.cleaned_data['institute_id']
             Degree = appform.cleaned_data['degree']
@@ -23,21 +25,24 @@ def applicationFormPage(request, job_id):
             Cgpa = appform.cleaned_data['cgpa']
             Experience = appform.cleaned_data['experience']
             Ans = appform.cleaned_data['ans']
-            print(institute_id,Ans,request.session['username'])
+            print(institute_id, Ans, request.session['username'])
 
-            applicant_query = "select id from applicant_applicant where username = '"+str(request.session['username'])+"';"
-            institute_query = "select * from applicant_institute where institute_id = '"+str(institute_id)+"';"
-            job_query = "select * from jobs_jobs where job_id = '"+str(job_id)+"';"
+            applicant_query = "select id from applicant_applicant where username = '" + \
+                str(request.session['username'])+"';"
+            institute_query = "select * from applicant_institute where institute_id = '" + \
+                str(institute_id)+"';"
+            job_query = "select * from jobs_jobs where job_id = '" + \
+                str(job_id)+"';"
             user_applicant = applicant.objects.raw(applicant_query)[0]
             user_institute = institute.objects.raw(institute_query)[0]
             user_job = jobs.objects.raw(job_query)[0]
-            application.objects.create(applicant_id = user_applicant,process_id = Process,job_id = user_job,cgpa = Cgpa,experience = Experience,graduation_year = Year,ans = Ans,degree = Degree,institute_id = user_institute,date_of_application = datetime.datetime.now().strftime ("%Y-%m-%d") )
+            application.objects.create(applicant_id=user_applicant, process_id=Process, job_id=user_job, cgpa=Cgpa, experience=Experience, graduation_year=Year,
+                                       ans=Ans, degree=Degree, institute_id=user_institute, date_of_application=datetime.datetime.now().strftime("%Y-%m-%d"))
             return redirect('dashboard')
     query = "select * from jobs_jobs where job_id=" + str(job_id) + " ;"
     Job = jobs.objects.raw(query)[0]
-    context = {"JobTitle": Job.title,"appform":appform}
+    context = {"JobTitle": Job.title, "appform": appform}
     return render(request, 'application/applicationForm.html', context)
-
 
 
 '''

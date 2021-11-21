@@ -22,7 +22,5 @@ urlpatterns = [
     path('', include('login.urls')),  # adding login django app urls
     path('', include('jobs.urls')),
     path('', include('applicant.urls')),
-    path('jobs/apply/myApplication/',
-         views.applicationFormPage, name='application-form'),
     path('', include('application.urls'))
 ]
