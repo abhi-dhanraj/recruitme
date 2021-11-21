@@ -1,0 +1,63 @@
+{% extends 'recruitme/index.html' %}
+
+{% load static %}
+{% load crispy_forms_tags%}
+{% block content %}
+<section class="main-container">
+    <section class="main-nav">
+      <div class="mynav">
+        <div class="nav-text">My application for: " {{JobTitle}} "</div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="text-content">
+          <div>
+            <form  method="POST" style="margin: 40px auto;width: 50vw;">
+            {% csrf_token %}
+                {{appform|crispy}}
+
+              <button type="submit" class="btn btn-success w-100">confirm application</button>
+          </form>
+        </div><!--card body end-->
+
+      </div>
+    </section>
+  </section>
+  {% endblock %}
+
+  <!--
+<h5>Fill the following form to continue with application</h5>
+              <br>
+              <div class="form-group">
+                  <label for="inputInstitute">Institute<span style="color: red;">*<span></label>
+                  {{appform.institute_id}}
+              </div>
+              <div class="form-row">
+                  <div class="form-group col-md-6">
+                  <label for="inputDegree">Degree<span style="color: red;">*<span></label>
+                      {{appform.degree}}
+                  </div>
+                  <div class="form-group col-md-6">
+                      <label for="cgpa">CGPA<span style="color: red;">*<span></span></label>
+                      {{appform.cgpa}}
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="yearOfGraduation">Year of Graduation<span style="color: red;">*<span></span></label>
+                        {{appform.graduation_year}}
+              </div>
+              <div class="form-group">
+                <label for="experience">Experience<span style="color: red;">*<span></span></label>
+                {{appform.experience}}
+                {% comment %} <textarea class="form-control" id="experience" rows="5" placeholder="mention your skills,projects,work sample etc..." required></textarea> {% endcomment %}
+              </div>
+              <div class="form-group">
+                <label for="experience">Why should you be hired for this role?<span style="color: red;">*<span></span></label>
+                {{appform.ans}}
+                {% comment %} <textarea class="form-control" id="experience" rows="5" required></textarea> {% endcomment %}
+              </div>
+
+
+
+  -->

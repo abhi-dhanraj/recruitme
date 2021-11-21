@@ -7,10 +7,7 @@ from .models import jobs
 def jobsPage(request):
     query = "select * from jobs_jobs;"
     Jobs = jobs.objects.raw(query)
-    for i in Jobs:
-        print(i.title)
     context = {"Jobs": Jobs}
-    # print(Jobs)
     return render(request, 'jobs/jobsPage.html', context)
 
 
@@ -20,6 +17,14 @@ def jobDetailsPage(request, job_id):
     print(query)
     Job = jobs.objects.raw(query)[0]
     print(Job.title)
+    context = {"Job": Job}
+    return render(request, 'jobs/jobDetailsPage.html', context)
+
+
+def jobDetailsPage(request, job_id):
+    print(job_id)
+    query = "select * from jobs_jobs where job_id = "+str(job_id)+";"
+    Job = jobs.objects.raw(query)[0]
     context = {"Job": Job}
     return render(request, 'jobs/jobDetailsPage.html', context)
 
