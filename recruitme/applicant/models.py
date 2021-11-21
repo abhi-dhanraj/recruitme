@@ -9,8 +9,8 @@ class applicant(models.Model):
     nationality = models.CharField(max_length=70)
     
     
-class institue(models.Model):
-    institue_id = models.CharField(max_length=10)
+class institute(models.Model):
+    institute_id = models.CharField(max_length=10)
     name = models.CharField(max_length=70)
     tnp_contact = models.BigIntegerField()
     students_applied = models.IntegerField()
