@@ -28,7 +28,6 @@ def loginSignup(request):
                     print("USER IS NOT PRESENT")
                     # should redirect to login page
                     return redirect('login-signup-page')
-
         elif signup_form.is_valid():
             print("Signup form Created!")
             username = signup_form.cleaned_data['username']

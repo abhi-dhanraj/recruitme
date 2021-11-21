@@ -15,7 +15,7 @@ def applicationFormPage(request, job_id):
             print("YESSS")
             round = rounds.objects.create(aptitude = 0,interview = 0,professional_fitment = 0,hr = 0,stage = 0,total_points = 0)
             round.save()
-            Process = process.objects.create(status = 0,round_id = round)
+            Process = process.objects.create(status = False,round_id = round)
             Process.save()
             institute_id = appform.cleaned_data['institute_id']
             Degree = appform.cleaned_data['degree']
@@ -23,6 +23,8 @@ def applicationFormPage(request, job_id):
             Cgpa = appform.cleaned_data['cgpa']
             Experience = appform.cleaned_data['experience']
             Ans = appform.cleaned_data['ans']
+            print(institute_id,Ans,request.session['username'])
+
             applicant_query = "select id from applicant_applicant where username = '"+str(request.session['username'])+"';"
             institute_query = "select * from applicant_institute where institute_id = '"+str(institute_id)+"';"
             job_query = "select * from jobs_jobs where job_id = '"+str(job_id)+"';"
